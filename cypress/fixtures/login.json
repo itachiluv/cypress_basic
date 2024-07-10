@@ -1,0 +1,22 @@
+[
+    {
+        "username": "test",
+        "password": "Test1234!",
+        "data": "test"
+    },
+    {
+        "username": "test1",
+        "password": "Test1234!",
+        "data": "Test1"
+    },
+    {
+        "username": "test2",
+        "password": "Test1234!",
+        "data": "Test2"
+    },
+    {
+        "username": "test13",
+        "password": "Test1234!",
+        "data": "Invalid username or password!"
+    }
+]
