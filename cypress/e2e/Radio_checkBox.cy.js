@@ -18,11 +18,22 @@ describe('Radio Button', () => {
     })
 
 
-    it.only('Checkbox', () => {
+
+    //Verify the CheckBoxes
+
+    it('Checkbox', () => {
 
         cy.visit('https://testautomationpractice.blogspot.com/')
         cy.get(".form-group [type='checkbox']").check().should('be.checked')
+        cy.get(".form-group [type='checkbox']").uncheck().should('not.be.checked')
     });
 
 
+    it.only('DemoQA website Checkbox', () => {
+        cy.visit('https://demoqa.com/checkbox')
+        cy.get('#tree-node-home').check({ force: true }).should('be.checked')
+
+
+
+    });
 })

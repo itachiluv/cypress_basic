@@ -26,5 +26,18 @@
 
 /// <reference types = "Cypress" />
 
-/// //<reference types ="Cypress-xpath "/> 
+// /<reference types ="Cypress-xpath "/> 
+
+
+
+Cypress.Commands.add('getIframe', (iframe) => {
+    return cy.get(iframe)
+        .its('0.contentDocument.body')
+        .should('not.be.empty')
+        .then(cy.wrap)
+})
+
+// cypress/support/commands.js
+
+
 
