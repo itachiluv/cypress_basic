@@ -39,5 +39,28 @@ Cypress.Commands.add('getIframe', (iframe) => {
 
 // cypress/support/commands.js
 
+// Click Link 
+Cypress.Commands.add('clickLink', (label) => {
+    cy.get('a').contains(label).click()
+})
+
+// Over write --> Error
+
+// Cypress.Commands.overwriteQuery('contains', (originalFn, subject, filter, text, options = {}) => {
+//     if (typeof text === 'object') {
+//         options = text;
+//         text = filter;
+//         filter = undefined;
+//     }
+
+//     options.matchCase = false;
+//     return originalFn(subject, filter, text, options);
+// });
 
 
+// Login 
+Cypress.Commands.add('login', (username, password) => {
+    cy.get('#userName').type(username)
+    cy.get('#password').type(password)
+    cy.get('#login').click()
+})
