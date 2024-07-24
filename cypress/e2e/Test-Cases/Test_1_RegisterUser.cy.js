@@ -3,6 +3,7 @@ import Login_info from "../../PageObject/login_info";
 import SignUp_Form from "../../PageObject/signUp_form";
 import delete_user from "../../PageObject/delete_page";
 
+//  npx cypress run --spec cypress\e2e\Test-Cases\*.cy.js ---> overall testcase run in prompt
 
 describe('Automation Exercise', () => {
 
