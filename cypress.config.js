@@ -1,11 +1,16 @@
 const { defineConfig } = require("cypress");
 const mysql = require('mysql')
+const { allureCypress } = require("allure-cypress/reporter");
 
 module.exports = defineConfig({
   projectId: 'i6ir9n',
   e2e: {
     setupNodeEvents(on, config) {
+      // setupNodeEvents(on, config) {
+      //   allureCypress(on);
+      // }
       // Database connection code :
+
       on("task", {
         queryDb: (query) => {
           return queryTestDb(query, config)
