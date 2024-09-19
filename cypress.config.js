@@ -3,20 +3,19 @@ const mysql = require('mysql')
 const { allureCypress } = require("allure-cypress/reporter");
 
 module.exports = defineConfig({
-  projectId: 'i6ir9n',
+  projectId: "b75mqx",
   e2e: {
     setupNodeEvents(on, config) {
-      // setupNodeEvents(on, config) {
-      //   allureCypress(on);
-      // }
-      // Database connection code :
-
       on("task", {
         queryDb: (query) => {
           return queryTestDb(query, config)
         }
       })
+      allureCypress(on, config); // Allure reporter setup (optional if you are using Allure)
+      // Make sure you return the config object if you modify it
+      return config;
     },
+    specPattern: 'cypress/e2e/Cypress-Basics/**/*.cy.js',
     "env": {
       "db": {
         "host": "127.0.0.1",
@@ -49,7 +48,7 @@ function queryTestDb(query, config) {
 }
 
 
-// Use in DB  query : 
+// Use in DB  query :
 // ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'test1234';
 
 
